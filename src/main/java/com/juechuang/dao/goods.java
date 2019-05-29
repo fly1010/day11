@@ -10,4 +10,5 @@ public interface goods {
      Cgoods findAll();
     Cgoods findAll1();
     Cgoods findAll3();
+    Cgoods findAll2();
 }
