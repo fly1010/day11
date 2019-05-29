@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.juechuang.dao.cgoodsdao">
+
+    <!--按照图片查找商品-->
+    <select id="goods" parameterType="java.lang.String">
+
+        select * from cgoods where Photo = #{photo}
+    </select>
+</mapper>

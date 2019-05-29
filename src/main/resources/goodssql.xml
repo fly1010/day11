@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.juechuang.dao.goods">
+    <resultMap id="goodsMap" type="com.juechuang.emity.Cgoods">
+        <id column="GID" property="gid"></id>
+        <result column="Cname" property="cname"></result>
+        <result column="Gname" property="gname"></result>
+        <result column="Number" property="number"></result>
+        <result column="Photo" property="photo"></result>
+        <result column="Type" property="type"></result>
+        <result column="Described" property="described"></result>
+        <result column="Price" property="price"></result>
+        <association property="first" javaType="com.juechuang.emity.First">
+            <id column="cid" property="cid"></id>
+            <result column="cname" property="cname"></result>
+        </association>
+    </resultMap>
+
+    <select id="findOne" parameterType="java.lang.Integer" resultMap="goodsMap">
+        select
+          cgoods.GID,
+          cgoods.Gname,
+          cgoods.Number,
+          cgoods.Photo,
+          cgoods.Type,
+          cgoods.Price,
+          cgoods.Described,
+          first.cid,
+          first.cname
+        from first,cgoods
+        where first.cname=cgoods.Cname
+        and cgoods.GID=#{gid}
+    </select>
+</mapper>
