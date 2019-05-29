@@ -8,4 +8,5 @@ public interface goods {
 
      Cgoods findOne(Integer gid);
      Cgoods findAll();
+    Cgoods findAll1();
 }
