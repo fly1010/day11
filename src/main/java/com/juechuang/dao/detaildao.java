@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface detaildao {
      List<Detail> findById(Integer orderId);
+
 }
+
+
+
